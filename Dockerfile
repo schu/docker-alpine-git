@@ -1,10 +1,6 @@
 FROM alpine
 
-LABEL maintainer Bill Wang <ozbillwang@gmail.com>
-
-RUN apk --update add git openssh && \
-    rm -rf /var/lib/apt/lists/* && \
-    rm /var/cache/apk/*
+RUN apk --no-cache add git openssh
 
 VOLUME /git
 WORKDIR /git
